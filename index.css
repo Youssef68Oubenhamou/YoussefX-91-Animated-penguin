@@ -1,0 +1,194 @@
+:root {
+    --peng-first-color: black;
+    --peng-second-color: white;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.penguin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    animation: jump .5s linear 4s 1;
+}
+
+@keyframes jump {
+    from {
+        transform: translate(-50% , -50%);
+    }
+
+    to {
+        transform: translate(-50% , -60%);
+    }
+}
+
+.penguin .penguin-head {
+    background-color: var(--peng-first-color);
+    width: 160px;
+    height: 160px;
+    border-radius: 90px;
+}
+
+.penguin .penguin-head .face {
+    background-color: var(--peng-second-color);
+    width: 75px;
+    height: 75px;
+    top: 40%;
+    left: 27%;
+    position: relative;
+    -webkit-transform: rotate(-45deg);
+}
+
+.penguin .penguin-head .face .first-eye {
+    width: 10px;
+    height: 10px;
+    background-color: var(--peng-first-color);
+    position: absolute;
+    margin-left: 25px;
+    border-radius: 10px;
+    z-index: 1;
+    animation: both move-eye .3s ease-in 3s reverse;
+}
+
+.penguin .penguin-head .face .second-eye {
+    width: 10px;
+    height: 10px;
+    background-color: var(--peng-first-color);
+    position: absolute;
+    margin-left: 68px;
+    margin-top: 40px;
+    border-radius: 10px;
+    z-index: 1;
+    animation: both move-eye .3s ease-in 3s reverse;
+}
+
+@keyframes move-eye {
+    from {
+        height: 10px;
+    }
+
+    to {
+        height: 1px;
+        transform: rotate(45deg);
+    }
+}
+
+.penguin .penguin-head .face .mouth {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 187, 0);
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 28px;
+    border-top-right-radius: 17px;
+    z-index: 1;
+}
+
+.penguin .penguin-head .face .mouth .left {
+    background-color: var(--peng-second-color);
+    width: 30px;
+    height: 10px;
+    position: absolute;
+    margin-top: 10px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    transform: rotate(90deg) translate(0% , 107%);
+}
+
+.penguin .penguin-head .face .mouth .right {
+    background-color: var(--peng-second-color);
+    width: 30px;
+    height: 10px;
+    position: absolute;
+    margin-top: 21px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.penguin .penguin-head .face:before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: var(--peng-second-color);
+    top: -50%;
+    border-radius: 70px;
+}
+
+.penguin .penguin-head .face:after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: var(--peng-second-color);
+    right: -50%;
+    border-radius: 70px;
+}
+
+.penguin .penguin-body {
+    background-color: var(--peng-first-color);
+    width: 260px;
+    height: 330px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: translate(-19% , -10%);
+}
+
+.penguin .penguin-body:before {
+    content: "";
+    width: 200px;
+    height: 50px;
+    background-color: var(--peng-first-color);
+    position: absolute;
+    transform: rotate(140deg) translate(50% , 25%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.penguin .penguin-body:after {
+    content: "";
+    width: 200px;
+    height: 50px;
+    background-color: var(--peng-first-color);
+    position: absolute;
+    /* transform: rotate(40deg) translate(-20% , -570%); */
+    transform: rotate(40deg) translate(67% , -105%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.penguin .penguin-body .white-space {
+    background-color: var(--peng-second-color);
+    width: 190px;
+    height: 295px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: translate(18% , -1%);
+    position: absolute; 
+    z-index: 999;
+}
+
+.penguin .penguin-footer {
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: translate(15% , -160%);
+}
+
+.penguin .penguin-footer .first-leg {
+    background-color: var(--peng-second-color);
+    width: 60px;
+    height: 30px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background-color: rgb(255, 187, 0);
+}
+
+.penguin .penguin-footer .second-leg {
+    background-color: var(--peng-second-color);
+    width: 60px;
+    height: 30px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background-color: rgb(255, 187, 0);
+}
